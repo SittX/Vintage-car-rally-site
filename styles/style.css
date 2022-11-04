@@ -1,0 +1,22 @@
+/* font-family: 'Noto Sans', sans-serif; */
+/* font-family: 'Roboto Mono', monospace; */
+/* font-family: 'Xanh Mono', monospace; */
+:root {
+    /* Colors */
+    --light-green: #4E6C50;
+    --green: #395144;
+    --vanilla: #FAD6A5;
+    --brown: #9F8772;
+    --font-color: #FFF8EA;
+
+    /* Font */
+    --main-font: 'Noto Sans', sans-serif;
+    --roboto: 'Roboto Mono', monospace;
+    --vintage-font: 'Xanh Mono', monospace;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
