@@ -15,7 +15,34 @@
 </head>
 
 <body>
-
+    <header class="site-header">
+        <nav class="nav">
+            <div class="nav_logo-wrapper">
+                <a href="#" class="nav__logo">Vintage Car Club</a>
+            </div>
+            <div class="nav__links-wrapper" id="menu">
+                <div class="nav__menu-close-btn" onclick="closeMenu()">X</div>
+                <ul>
+                    <li><a href="#">Drivers</a></li>
+                    <li><a href="#">Q&A</a></li>
+                    <li><a href="#">Registeration</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Registeration</a></li>
+                </ul>
+            </div>
+            <div class="nav__menu-open-btn" onclick="openMenu()">#</div>
+        </nav>
+    </header>
 </body>
+<script>
+    let menu = document.getElementById("menu");
+    let closeMenu = () => {
+        menu.style.right = "-1080px";
+    }
+    let openMenu = () => {
+        menu.style.right = "0";
+    } 
+</script>
 
 </html>
