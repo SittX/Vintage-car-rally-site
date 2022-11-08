@@ -97,47 +97,30 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     height: 140px;
 }
 
-
 .card__wrapper {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: space-around;
 }
 
-.card__img {
-    width: 500px;
-    height: 400px;
+.card {
+    width: 400px;
+    height: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    border-radius: 5px;
+    box-shadow: 5px 8px 9px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 8px 9px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 8px 9px -3px rgba(0, 0, 0, 0.75);
 }
 
-.card__img:nth-child(1) {
-    background-image: url("/assets/images/vintageRallyCars/AutoBianchi.jpg");
-}
-
-.card__img:nth-child(2) {
-    background-image: url("/assets/images/vintageRallyCars/BMW.jpg");
-}
-
-.card__img:nth-child(3) {
-    background-image: url("/assets/images/vintageRallyCars/Datsun240Z.jpg");
-}
-
-.card__img:nth-child(4) {
-    background-image: url("/assets/images/vintageRallyCars/Fiat.jpg");
-}
-
-.card__img:nth-child(5) {
-    background-image: url("/assets/images/vintageRallyCars/FIAT_spider.jpg");
-}
-
-.card__img:nth-child(6) {
-    background-image: url("/assets/images/vintageRallyCars/Opel.jpg");
-}
-
-.card__img:nth-child(7) {
-    background-image: url("/assets/images/vintageRallyCars/SAAB.jpg");
+.card__img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
 }
 
 .card__overlay {
@@ -148,10 +131,10 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     width: 100%;
     bottom: 0;
     opacity: 0;
-    transition: 1s ease;
+    transition: .5s ease;
 }
 
-.card__img:hover .card__overlay {
+.card:hover .card__overlay {
     display: block;
     opacity: 1;
 }
@@ -199,9 +182,13 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 
 
 /* Drivers page */
+.driver-page__header {
+    width: 100%;
+    height: 50vh;
+}
 
-
-@media only screen and (max-width:700px) {
+/* Phone screen size */
+@media only screen and (max-width:750px) {
     .nav__links-wrapper {
         position: absolute;
         background-color: red;
@@ -248,13 +235,31 @@ we have to put the BG img in the pseudo element of the site-header and set the o
         scroll-snap-align: start;
     }
 
-    .card__img {
-        width: 100%;
-        height: 250px;
-        margin: 1rem 0;
+    .card__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
     }
 
-    .card__wrapper {
-        flex-direction: column;
+    .card {
+        width: 300px;
+        height: 250px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        border-radius: 5px;
+        box-shadow: 5px 8px 9px -3px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 5px 8px 9px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 8px 9px -3px rgba(0, 0, 0, 0.75);
+    }
+
+    .card__img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
     }
 }
