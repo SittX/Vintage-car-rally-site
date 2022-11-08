@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header class="site-header">
+    <header class="hero-header">
         <nav class="nav">
             <div class="nav_logo-wrapper">
                 <a href="#" class="nav__logo">Vintage Car Club</a>
@@ -45,22 +45,53 @@
         <h3 class="country__title">
             Our car will take place across the following five countries
         </h3>
-        <div class="slider__wrapper">
-            <div class="slider">
-                <img src="/assets/images/countryFlags/thailand.jpg" id="slide1" alt="country's flag" class="slide__img">
-                <img src="/assets/images/countryFlags/vietnam.jpg" id="slide2" alt="country's flag" class="slide__img">
-                <img src="/assets/images/countryFlags/laos.jpg" id="slide3" alt="country's flag" class="slide__img">
-                <img src="/assets/images/countryFlags/cambodia.jpg" id="slide4" alt="country's flag" class="slide__img">
-                <img src="/assets/images/countryFlags/malaysia.jpg" id="slide5" alt="country's flag" class="slide__img">
-            </div>
-            <div class="slider__nav">
-                <a href="#slide1"></a>
-                <a href="#slide2"></a>
-                <a href="#slide3"></a>
-                <a href="#slide4"></a>
-                <a href="#slide5"></a>
-            </div>
-        </div>
+    </section>
+    <section id="images-slider">
+        <ul class="slides">
+
+            <input type="radio" name="radio-btn" id="slide__img-1" />
+            <li class="slide-container">
+                <div class="slide">
+                    <img src="/assets/images/countryFlags/cambodia.jpg" />
+                </div>
+            </li>
+
+            <input type="radio" name="radio-btn" id="slide__img-2" />
+            <li class="slide-container">
+                <div class="slide">
+                    <img src="/assets/images/countryFlags/laos.jpg" />
+                </div>
+            </li>
+
+            <input type="radio" name="radio-btn" id="slide__img-3" />
+            <li class="slide-container">
+                <div class="slide">
+                    <img src="/assets/images/countryFlags/malaysia.jpg" />
+                </div>
+            </li>
+
+            <input type="radio" name="radio-btn" id="slide__img-4" />
+            <li class="slide-container">
+                <div class="slide">
+                    <img src="/assets/images/countryFlags/thailand.jpg" />
+                </div>
+            </li>
+
+            <input type="radio" name="radio-btn" id="slide__img-5" />
+            <li class="slide-container">
+                <div class="slide">
+                    <img src="/assets/images/countryFlags/vietnam.jpg" />
+                </div>
+            </li>
+
+            <li class="slider__nav-dots">
+                <label for="slide__img-1" class="slider__nav-dot" id="img-dot-1"></label>
+                <label for="slide__img-2" class="slider__nav-dot" id="img-dot-2"></label>
+                <label for="slide__img-3" class="slider__nav-dot" id="img-dot-3"></label>
+                <label for="slide__img-4" class="slider__nav-dot" id="img-dot-4"></label>
+                <label for="slide__img-5" class="slider__nav-dot" id="img-dot-5"></label>
+            </li>
+        </ul>
     </section>
     <section class="container">
         <h3>Cars</h3>

@@ -36,17 +36,37 @@ a {
     text-decoration: none;
 }
 
+/* Image slider */
+.slides {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide img {
+    width: 200px;
+    height: 150px;
+}
+
+.slide-container::marker {
+    content: "";
+}
+
 /* Header */
 /* Since we can't set opacity of the background image , 
 we have to put the BG img in the pseudo element of the site-header and set the opacity there */
-.site-header {
+.hero-header {
     width: 100%;
     min-height: 100vh;
 }
 
-.site-header::before {
+.hero-header::before {
     content: "";
-    background-image: url("../assets/images/rally-car-meetup2.jpg");
+    background: linear-gradient(180deg, rgba(252, 228, 188, 0.863) 5%, rgba(119, 102, 3, 0.493) 79%), url("../assets/images/rally-car-meetup1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -54,7 +74,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.35;
+    opacity: 1;
 }
 
 .nav {
@@ -80,21 +100,6 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 .nav__links-wrapper {
     transition: 0.5s;
     transition-timing-function: ease-out;
-}
-
-.slider__wrapper {
-    margin: 2rem auto;
-}
-
-.slider {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.slide__img {
-    width: 220px;
-    height: 140px;
 }
 
 .card__wrapper {
@@ -131,6 +136,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     width: 100%;
     bottom: 0;
     opacity: 0;
+    border-radius: 0 0 5px 5px;
     transition: .5s ease;
 }
 
@@ -184,7 +190,75 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 /* Drivers page */
 .driver-page__header {
     width: 100%;
+    height: 10vh;
+}
+
+.driver-card {
+    width: 200px;
+    height: 250px;
+}
+
+.driver-card .card__overlay ul {
+    list-style-type: none;
+}
+
+.showcase__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
     height: 50vh;
+    flex: 2 1;
+}
+
+.showcase__text {
+    line-height: 1.5rem;
+}
+
+/* About Us page */
+.about-us__header {
+    height: 5vh;
+}
+
+.hero__title-about-us {
+    text-align: center;
+}
+
+.hero__showcase-about-us {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero__showcase-about-us p {
+    line-height: 1.5rem;
+}
+
+.hero__question {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.hero__showcase-img {
+    width: 500px;
+    border-radius: 5px;
+}
+
+.about-us-info {
+    text-align: center;
+}
+
+.about-us__title {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.about-us__quote {
+    font-size: 1.5rem;
+    margin: 2rem;
+}
+
+.social-media__icon {
+    width: 2rem;
 }
 
 /* Phone screen size */
@@ -218,21 +292,102 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     }
 
     /* image slider */
-    .slider__wrapper {
-        position: relative;
-        max-width: 10rem;
+    #images-slider {
+        height: 300px;
+    }
+
+    .slides {
+        width: 250px;
         margin: 0 auto;
+        position: relative;
+        display: block;
     }
 
-    .slider {
-        display: flex;
-        overflow-x: auto;
+    .slides input {
+        display: none;
     }
 
-    .country__flag-img {
-        flex: 1 0 100%;
-        height: 500px;
-        scroll-snap-align: start;
+    .slide-container {
+        display: block;
+    }
+
+    .slide {
+        top: 0;
+        opacity: 0;
+        display: block;
+        position: absolute;
+        transform: scale(0);
+        transition: all .7s ease-in-out;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    /* .slider__nav label {
+        display: none;
+        position: absolute;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin-top: 29%;
+    }
+
+    .slider__nav label:hover {
+        color: #000;
+    }
+
+    .slider__nav .next {
+        right: 5px;
+    }
+
+    .slider__nav .prev {
+        left: 5px;
+    } */
+
+    input:checked+.slide-container .slide {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 1s ease-in-out;
+    }
+
+    /* input:checked+.slide-container .slider__nav label {
+        display: block;
+    } */
+
+    .slider__nav-dots {
+        width: 100%;
+        height: 11px;
+        display: block;
+        position: absolute;
+        text-align: center;
+        margin-top: 63%;
+    }
+
+    .slider__nav-dots .slider__nav-dot {
+        width: 11px;
+        height: 11px;
+        margin: 0 4px;
+        position: relative;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .slider__nav-dots .slider__nav-dot:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    input#img-1:checked~.slider__nav-dots label#img-dot-1,
+    input#img-2:checked~.slider__nav-dots label#img-dot-2,
+    input#img-3:checked~.slider__nav-dots label#img-dot-3,
+    input#img-4:checked~.slider__nav-dots label#img-dot-4,
+    input#img-5:checked~.slider__nav-dots label#img-dot-5,
+    input#img-6:checked~.slider__nav-dots label#img-dot-6 {
+        background: rgba(0, 0, 0, 0.8);
     }
 
     .card__wrapper {
