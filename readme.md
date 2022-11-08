@@ -53,3 +53,6 @@ Include on-page animatedtext search to allow users to find content in the page.
 https://www.carovanaromantica.it/
 https://www.carwow.co.uk/blog/best-rally-cars
 https://www.vintage-rallye-cars.com/collection/
+
+**Image slide references**
+https://codepen.io/Gjoko-Bulovski/pen/qQONqp
