@@ -4,7 +4,7 @@
 :root {
     /* Colors */
     --light-green: #4E6C50;
-    --green: #395144;
+    --green: #2e3b34;
     --vanilla: #FAD6A5;
     --brown: #9F8772;
     --white: #FFF8EA;
@@ -18,8 +18,8 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: var(--main-font);
+    box-sizing: border-box;
 }
 
 .container {
@@ -260,6 +260,158 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 .social-media__icon {
     width: 2rem;
 }
+
+/* Q&A page */
+.qna-banner {
+    height: 10vh;
+    width: 100%;
+}
+
+.searchbar {
+    width: 100%;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.searchbar__input {
+    margin: 1.5rem 0;
+    width: 500px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.searchbar__input:focus {
+    outline: none;
+}
+
+.accordion__container {
+    padding: 1rem 1.5rem;
+}
+
+.accordion__item {
+    background-color: var(--light-green);
+    padding: 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.accordion__link {
+    font-size: 20px;
+    margin: 1rem 0;
+}
+
+.accordion__answer {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--green);
+    transition: max-height 500ms;
+}
+
+.accordion__answer p {
+    padding: 1rem;
+    color: var(--white);
+}
+
+.accordion__answer::before {
+    content: "";
+    height: 90%;
+    width: .5rem;
+    background-color: var(--vanilla);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.accordion__item:target .accordion__answer {
+    max-height: 500px;
+}
+
+/* Registeration page */
+.registeration-banner {
+    height: 10vh;
+}
+
+.registeration-form__title {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.registeration-form {
+    height: 500px;
+    max-width: 700px;
+    min-width: 400px;
+    background-color: rgb(37, 37, 78);
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: none;
+    border-radius: 10px;
+
+    /* Center element at the center of the page */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    /* box shadow */
+    box-shadow: 7px 8px 17px -10px rgba(0, 0, 0, 0.67);
+    -webkit-box-shadow: 7px 8px 17px -10px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 7px 8px 17px -10px rgba(0, 0, 0, 0.67);
+}
+
+.form-label {
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.registeration-form__input-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    justify-content: space-between;
+}
+
+.registeration-form__input-container input[type=text],
+.registeration-form__input-container input[type=email] {
+    display: block;
+}
+
+.registeration-form__input {
+    width: 300px;
+    height: 30px;
+    padding: 0 .5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.registeration-form__input:focus {
+    outline: none;
+}
+
+.rbtn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.registeration-form__submit-btn-wrapper {
+    width: 100%;
+}
+
+.registeration-form__submit-btn {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
 
 /* Phone screen size */
 @media only screen and (max-width:750px) {
