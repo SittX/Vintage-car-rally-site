@@ -290,7 +290,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     padding: 1rem 1.5rem;
 }
 
-.accordion__item {
+.accordion__question {
     background-color: var(--light-green);
     padding: 1rem;
     margin: 1rem 0;
@@ -327,8 +327,18 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     transform: translateY(-50%);
 }
 
-.accordion__item:target .accordion__answer {
+.accordion__question:target .accordion__answer {
     max-height: 500px;
+}
+
+#questionNotFound {
+    width: 100%;
+    text-align: center;
+    /* display: none; */
+}
+
+#questionNotFound p {
+    font-size: 1.5rem;
 }
 
 /* Registeration page */
@@ -337,7 +347,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 .registeration-form__title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--white);
 }
 
