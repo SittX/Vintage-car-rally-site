@@ -344,7 +344,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 .registeration-form {
     height: 500px;
     max-width: 700px;
-    min-width: 400px;
+    min-width: 300px;
     background-color: rgb(37, 37, 78);
     padding: 0 1rem;
     display: flex;
@@ -544,9 +544,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 
     .card__wrapper {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row;
         gap: 5px;
         flex-wrap: wrap;
     }
@@ -569,4 +567,58 @@ we have to put the BG img in the pseudo element of the site-header and set the o
         width: 100%;
         height: 100%;
     }
+
+    .driver-page__header {
+        height: 0;
+    }
+
+    /* Driver page */
+    .showcase__wrapper {
+        flex-direction: column;
+        padding: 0;
+        justify-content: unset;
+        align-items: unset;
+    }
+
+    .showcase__img {
+        width: 100%;
+        height: 50%;
+        image-resolution: inherit;
+    }
+
+    .driver-card {
+        width: 200px;
+    }
+
+    /* registeration page */
+    .registeration-form {
+        width: 400px;
+    }
+
+    .registeration-form__title {
+        font-size: 1.5rem;
+    }
+
+    .form-label {
+        font-size: 1rem;
+    }
+
+    .rbtn-container {
+        justify-content: space-around;
+    }
+
+    /* about us */
+    .hero__showcase-about-us {
+        flex-direction: column;
+        flex-flow: column-reverse;
+    }
+
+    .hero__showcase-img {
+        width: 100%;
+    }
+
+    .about-us__title {
+        font-size: 1.5rem;
+    }
+
 }
