@@ -1,24 +1,24 @@
 # Requirements
 
-**Home page**
+**Home page** DONE
 - This page will introduce visitors to the Vintage Rally Club, it should include relevant images of the different vintage cars that will take part in the rally.
 - The text should be minimal, visuals should be used to break up the written content.
 - This page should include a navigation bar (with links inside the bar and hover over tabs), slide show, header, sections, footer.
 - Modal popup window that is displayed on top of the current page.
 
-**Contact Us**
+**Contact Us** Media query of the contact form 
 This page will allow spectators to contact the vintage car rally club-it should be a responsive contact section including first name, last name, country and submit button.
 
-**About Us**
+**About Us** Media query 
 This page should give customers an overview of who the Vintage Car company are and what they do. This should be a responsive page that resizes.
 
-**Q&A**
+**Q&A** - Animated search button and searching functionality
 This page should include a forum where the registered members can ask questions including an animated search button.
 
-**Register Online**
+**Register Online** Stages of the rally 
 This page should provide an overview of the three different stages of the rally and the countries and an online booking form.  This will initially be through email and should be designed to include accessibility features to complete the form. 
 
-**Drivers**
+**Drivers** 
 This page provides a list of the current drivers including a responsive image grid overlaid with transparent text. 
 
 ----

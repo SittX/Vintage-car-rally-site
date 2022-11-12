@@ -40,12 +40,13 @@
             Welcome from Vintage car club community. Here you can search and ask for frequently asked question about our
             community.
         </h3>
-        <input type="text" class="searchbar__input">
+        <input type="text" class="searchbar__input" onkeyup="searchQuestion()" placeholder="Search question "
+            id="question-searchbar" />
     </div>
 
     <section class="container">
-        <div class="accordion__container">
-            <div class="accordion__item" id="question1">
+        <div class="accordion__container" id="accordion__container">
+            <div class="accordion__question" id="question1">
                 <a href="#question1" class="accordion__link">
                     Hello, how are you ?
                 </a>
@@ -58,7 +59,7 @@
                     </p>
                 </div>
             </div>
-            <div class="accordion__item" id="question2">
+            <div class="accordion__question" id="question2">
                 <a href="#question2" class="accordion__link">
                     How are you ?
                 </a>
@@ -71,9 +72,9 @@
                     </p>
                 </div>
             </div>
-            <div class="accordion__item" id="question3">
+            <div class="accordion__question" id="question3">
                 <a href="#question3" class="accordion__link">
-                    Hello, how are you ?
+                    My G
                 </a>
                 <div class="accordion__answer">
                     <p>
@@ -83,6 +84,11 @@
                         perspiciatis facere modi repellat.
                     </p>
                 </div>
+            </div>
+            <div id="questionNotFound">
+                <p>
+                    Not found. Please try again.
+                </p>
             </div>
         </div>
     </section>
