@@ -567,7 +567,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 
 .slanted-card__text {
     color: white;
-    height: 80%;
+    height: auto;
     padding: 0 .5rem;
     background-color: var(--navy);
     width: 100%;
@@ -891,7 +891,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
         width: 100%;
     }
 
-    .slanted-card__text-large-size {
+    .remove-in-mobile {
         display: none;
     }
 }
