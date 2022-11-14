@@ -59,12 +59,12 @@ a {
 /* Header */
 /* Since we can't set opacity of the background image , 
 we have to put the BG img in the pseudo element of the site-header and set the opacity there */
-.hero-header {
+.homepage-hero-header {
     width: 100%;
     min-height: 100vh;
 }
 
-.hero-header::before {
+.homepage-hero-header::before {
     content: "";
     background: linear-gradient(180deg, rgba(252, 228, 188, 0.863) 5%, rgba(119, 102, 3, 0.493) 79%), url("../assets/images/rally-car-meetup1.jpg");
     background-repeat: no-repeat;
@@ -91,6 +91,10 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     margin-right: 1rem;
 }
 
+.nav__links-wrapper ul li a {
+    color: #000;
+}
+
 .nav__menu-close-btn,
 .nav__menu-open-btn {
     display: none;
@@ -102,6 +106,10 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     transition-timing-function: ease-out;
 }
 
+.nav__logo-wrapper a {
+    color: #000;
+}
+
 .card__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -110,8 +118,8 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 .card {
-    width: 400px;
-    height: 300px;
+    width: 350px;
+    height: 250px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -129,7 +137,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 .card__overlay {
-    background-color: var(--brown);
+    background-color: rgba(143, 145, 114, 0.911);
     list-style-position: inside;
     padding: 1rem;
     position: absolute;
@@ -147,7 +155,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 
 /* Home page */
 /* hero element of the site */
-.hero {
+.homepage-hero {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -155,23 +163,23 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     text-align: center;
 }
 
-.hero * {
+.homepage-hero * {
     margin: 1rem 0;
 }
 
-.hero__title {
+.homepage-hero__title {
     font-family: var(--vintage-font);
     font-size: 3rem;
     font-weight: 900;
 }
 
-.hero__text {
+.homepage-hero__text {
     font-family: var(--vintage-font);
     line-height: 1.5rem;
     font-weight: 700;
 }
 
-.hero__btn {
+.homepage-hero__btn {
     font-family: var(--roboto);
     background-color: var(--green);
     padding: 1rem;
@@ -181,7 +189,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     color: var(--white);
 }
 
-.hero__btn:hover {
+.homepage-hero__btn:hover {
     background-color: var(--light-green);
     padding: 1rem 2rem;
 }
@@ -334,7 +342,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 #questionNotFound {
     width: 100%;
     text-align: center;
-    /* display: none; */
+    display: none;
 }
 
 #questionNotFound p {
