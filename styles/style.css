@@ -8,6 +8,11 @@
     --vanilla: #FAD6A5;
     --brown: #9F8772;
     --white: #FFF8EA;
+    --light-gray: #C2c8c2;
+    --light-green: #7f8683;
+    --grey: #8F9998;
+    --navy: #414858;
+    --sky-blue: #5F84BD;
 
     /* Font */
     --main-font: 'Noto Sans', sans-serif;
@@ -20,6 +25,13 @@
     margin: 0;
     font-family: var(--main-font);
     box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    background-color: whitesmoke;
+    min-width: 400;
 }
 
 .container {
@@ -50,33 +62,57 @@ a {
 .slide img {
     width: 200px;
     height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .slide-container::marker {
     content: "";
 }
 
-/* Header */
-/* Since we can't set opacity of the background image , 
-we have to put the BG img in the pseudo element of the site-header and set the opacity there */
-.homepage-hero-header {
-    width: 100%;
-    min-height: 100vh;
+/* Footer */
+.footer {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: .5rem 0;
+    position: sticky;
+    top: 100%;
 }
 
-.homepage-hero-header::before {
-    content: "";
-    background: linear-gradient(180deg, rgba(252, 228, 188, 0.863) 5%, rgba(119, 102, 3, 0.493) 79%), url("../assets/images/rally-car-meetup1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 1;
+.footer__content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
 }
 
+.footer__pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+}
+
+.footer__pages a {
+    color: var(--white);
+}
+
+.footer__pages-cols {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.footer__pages-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__pages-col a {
+    margin: .1rem 0;
+}
+
+/* Nav */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -95,6 +131,10 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     color: #000;
 }
 
+.nav__links-wrapper ul li span {
+    display: none;
+}
+
 .nav__menu-close-btn,
 .nav__menu-open-btn {
     display: none;
@@ -110,6 +150,30 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     color: #000;
 }
 
+.nav__links-wrapper li {
+    display: inline-block;
+    position: relative;
+}
+
+.nav__links-wrapper li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--navy);
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.nav__links-wrapper li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+}
+
+/* Card */
 .card__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -137,8 +201,9 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 .card__overlay {
-    background-color: rgba(143, 145, 114, 0.911);
+    background-color: rgba(83, 91, 105, 0.959);
     list-style-position: inside;
+    color: var(--white);
     padding: 1rem;
     position: absolute;
     width: 100%;
@@ -154,7 +219,26 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 /* Home page */
-/* hero element of the site */
+/* Since we can't set opacity of the background image , 
+we have to put the BG img in the pseudo element of the site-header and set the opacity there */
+.homepage-hero-header {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.homepage-hero-header::before {
+    content: "";
+    background: linear-gradient(180deg, rgba(190, 207, 255, 0.849) 5%, rgba(95, 106, 167, 0.322) 79%), url("../assets/images/rally-car-meetup1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+}
+
 .homepage-hero {
     position: absolute;
     top: 50%;
@@ -171,43 +255,43 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     font-family: var(--vintage-font);
     font-size: 3rem;
     font-weight: 900;
+    margin: 0;
 }
 
 .homepage-hero__text {
     font-family: var(--vintage-font);
     line-height: 1.5rem;
     font-weight: 700;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
 }
 
 .homepage-hero__btn {
     font-family: var(--roboto);
-    background-color: var(--green);
+    background-color: var(--navy);
     padding: 1rem;
     border-radius: 5px;
     border: none;
     transition: 100ms ease-in;
     color: var(--white);
+    box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .homepage-hero__btn:hover {
-    background-color: var(--light-green);
-    padding: 1rem 2rem;
+    background-color: var(--grey);
+    padding: 1rem 1.5rem;
+    box-shadow: 8px 10px 15px 0px rgba(0, 0, 0, 0.78);
+    -webkit-box-shadow: 8px 10px 15px 0px rgba(0, 0, 0, 0.78);
+    -moz-box-shadow: 8px 10px 15px 0px rgba(0, 0, 0, 0.78);
 }
 
 
 /* Drivers page */
 .driver-page__header {
     width: 100%;
-    height: 10vh;
-}
-
-.driver-card {
-    width: 200px;
-    height: 250px;
-}
-
-.driver-card .card__overlay ul {
-    list-style-type: none;
+    height: 2vh;
 }
 
 .showcase__wrapper {
@@ -223,6 +307,22 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     line-height: 1.5rem;
 }
 
+.showcase__img {
+    min-width: 400px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.driver-card {
+    width: 220px;
+    height: 250px;
+}
+
+.driver-card .card__overlay ul {
+    list-style-type: none;
+}
+
+
 /* About Us page */
 .about-us__header {
     height: 5vh;
@@ -235,15 +335,18 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 .hero__showcase-about-us {
     display: flex;
     gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hero__showcase-about-us p {
     line-height: 1.5rem;
 }
 
-.hero__question {
+.about-us-hero__title {
+    font-weight: 500;
+    font-family: var(--roboto);
     font-size: 1.5rem;
-    margin: 1rem 0;
 }
 
 .hero__showcase-img {
@@ -271,7 +374,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 
 /* Q&A page */
 .qna-banner {
-    height: 10vh;
+    height: 5vh;
     width: 100%;
 }
 
@@ -282,12 +385,15 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 .searchbar__input {
-    margin: 1.5rem 0;
+    margin-top: 2rem;
     width: 500px;
     height: 40px;
     border: none;
     border-radius: 20px;
+    font-size: 1rem;
     padding: 0 20px;
+    background-color: var(--navy);
+    color: var(--white);
 }
 
 .searchbar__input:focus {
@@ -299,7 +405,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 .accordion__question {
-    background-color: var(--light-green);
+    background-color: var(--grey);
     padding: 1rem;
     margin: 1rem 0;
     border: none;
@@ -309,13 +415,14 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 .accordion__link {
     font-size: 20px;
     margin: 1rem 0;
+    color: #FFF;
 }
 
 .accordion__answer {
     max-height: 0;
     overflow: hidden;
     position: relative;
-    background-color: var(--green);
+    background-color: var(--navy);
     transition: max-height 500ms;
 }
 
@@ -346,12 +453,12 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 #questionNotFound p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 /* Registeration page */
 .registeration-banner {
-    height: 10vh;
+    height: 3vh;
 }
 
 .registeration-form__title {
@@ -363,7 +470,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     height: 500px;
     max-width: 700px;
     min-width: 300px;
-    background-color: rgb(37, 37, 78);
+    background-color: var(--navy);
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
@@ -431,20 +538,21 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 }
 
 /* Registeration page */
-
 .slanted-card {
     width: 100%;
     height: 400px;
     display: flex;
-    background-color: #000;
+    background-color: var(--navy);
     border: none;
     margin: 2rem 0;
 }
 
-.slanted-card__text {
-    width: 40%;
-    height: 100%;
-    background-color: #000;
+.slanted-card__title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    margin: .5rem;
 }
 
 .slanted-card__img {
@@ -453,12 +561,15 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     background-image: url('../assets/images/rally-car-meetup2.jpg');
     background-position: left;
     background-size: cover;
-    border-left: 100px solid #000;
+    border-left: 100px solid var(--navy);
     border-bottom: 400px solid transparent;
 }
 
 .slanted-card__text {
     color: white;
+    height: 80%;
+    padding: 0 .5rem;
+    background-color: var(--navy);
     width: 100%;
 }
 
@@ -474,15 +585,47 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     background-size: cover;
     border-left: unset;
     border-bottom: unset;
-    border-right: 100px solid #000;
+    border-right: 100px solid var(--navy);
     border-top: 400px solid transparent;
+}
+
+.user-newsletter-form__wrapper {
+    text-align: center;
+}
+
+.user-newsletter-form {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.user-newsletter-email {
+    height: 2.5rem;
+    width: 350px;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--light-gray);
+    color: var(--navy);
+    font-size: 1rem;
+}
+
+.user-newsletter-email:focus {
+    outline: none;
+}
+
+.user-newsletter-form__submit {
+    margin-left: 1rem;
+    padding: 0 .5rem;
+    border: none;
+    border-radius: 5px;
 }
 
 /* Phone screen size */
 @media only screen and (max-width:750px) {
     .nav__links-wrapper {
         position: absolute;
-        background-color: red;
+        background-color: var(--navy);
         height: 100vh;
         top: 0;
         right: -500px;
@@ -495,13 +638,24 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     }
 
     .nav__links-wrapper ul li {
-        display: block;
+        display: flex;
         margin: 1rem;
+        column-gap: 10px;
+        color: var(--white);
+    }
+
+    .nav__links-wrapper ul li a {
+        color: var(--white);
+    }
+
+    .nav__links-wrapper ul li span {
+        display: inline;
     }
 
     .nav__menu-close-btn {
         display: block;
         margin: 1rem;
+        color: var(--white);
     }
 
     .nav__menu-open-btn {
@@ -510,7 +664,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
 
     /* image slider */
     #images-slider {
-        height: 300px;
+        height: 200px;
     }
 
     .slides {
@@ -612,6 +766,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
         flex-direction: row;
         gap: 5px;
         flex-wrap: wrap;
+        row-gap: 1rem;
     }
 
     .card {
@@ -661,7 +816,7 @@ we have to put the BG img in the pseudo element of the site-header and set the o
     }
 
     .registeration-form__title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .form-label {
@@ -686,4 +841,57 @@ we have to put the BG img in the pseudo element of the site-header and set the o
         font-size: 1.5rem;
     }
 
+    /* Q&A  */
+    .accordion__link {
+        font-size: 1.1rem;
+    }
+
+    .searchbar__input {
+        width: 350px;
+        overflow-x: auto;
+    }
+
+    /* Contact Us page */
+    .registeration-form {
+        top: -15%;
+    }
+
+    .registeration-form__title {
+        font-size: 1.2rem;
+    }
+
+    /* Register page */
+    .slanted-card {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        background-color: var(--navy);
+        border: none;
+        margin: 2rem 0;
+    }
+
+    .slanted-card__title {
+        font-size: 1.3rem;
+        text-align: center;
+        font-weight: 800;
+        color: white;
+        margin: 1rem;
+    }
+
+
+    .slanted-card__img {
+        display: none;
+    }
+
+    .slanted-card__text {
+        color: white;
+        height: 80%;
+        padding: 0 .5rem;
+        background-color: var(--navy);
+        width: 100%;
+    }
+
+    .slanted-card__text-large-size {
+        display: none;
+    }
 }

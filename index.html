@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;1,400;1,500&family=Roboto+Mono&family=Xanh+Mono:ital@0;1&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -18,19 +20,48 @@
     <header class="homepage-hero-header">
         <nav class="nav">
             <div class="nav__logo-wrapper">
-                <a href="#" class="nav__logo">Vintage Car Club</a>
+                <a href="index.html" class="nav__logo">Vintage Car Club</a>
             </div>
             <div class="nav__links-wrapper" id="menu">
-                <div class="nav__menu-close-btn" onclick="closeMenu()">X</div>
+                <div class="nav__menu-close-btn" onclick="closeMenu()"><span class="material-symbols-outlined">
+                        close
+                    </span></div>
                 <ul>
-                    <li><a href="/pages/drivers.html">Drivers</a></li>
-                    <li><a href="/pages/que-n-ans.html">Q&A</a></li>
-                    <li><a href="/pages/registeration.html">Registeration</a></li>
-                    <li><a href="/pages/contact-us.html">Contact Us</a></li>
-                    <li><a href="/pages/about-us.html">About Us</a></li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            groups
+                        </span>
+                        <a href="/pages/drivers.html">Drivers</a>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            question_mark
+                        </span>
+                        <a href="/pages/que-n-ans.html">Q&A</a>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            content_paste
+                        </span>
+                        <a href="/pages/registeration.html">Registeration</a>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            support_agent
+                        </span>
+                        <a href="/pages/contact-us.html">Contact Us</a>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            info
+                        </span>
+                        <a href="/pages/about-us.html">About Us</a>
+                    </li>
                 </ul>
             </div>
-            <div class="nav__menu-open-btn" onclick="openMenu()">#</div>
+            <div class="nav__menu-open-btn" onclick="openMenu()"><span class="material-symbols-outlined">
+                    menu
+                </span></div>
         </nav>
         <div class="homepage-hero">
             <h1 class="homepage-hero__title">Vintage Car Club</h1>
@@ -170,6 +201,37 @@
         </div>
     </section>
 
+    <footer class="footer">
+        <p class="copyright-claim">2022@copyright</p>
+        <div class="footer__content-wrapper">
+            <div class="footer__pages">
+                <h3>Pages</h3>
+                <section class="footer__pages-cols">
+                    <div class="footer__pages-col">
+                        <a href="/pages/about-us.html">About Us</a>
+                        <a href="/pages/contact-us.html">Contact Us</a>
+                        <a href="/pages/drivers.html">Drivers</a>
+                    </div>
+
+                    <div class="footer__pages-col">
+                        <a href="/pages/que-n-ans.html">Q&A</a>
+                        <a href="/pages/registeration.html">Register</a>
+                    </div>
+                </section>
+            </div>
+            <div class="footer__social-medias">
+                <h3>Social medias</h3>
+                <a href="www.facebook.com"><img src="/assets/icons/facebook.png" alt="facebook link"
+                        class="social-media__icon"></a>
+                <a href="www.instagram.com">
+                    <img src="/assets/icons/instagram.png" alt="Instagram link" class="social-media__icon">
+                </a>
+                <a href="www.twitter.com">
+                    <img src="/assets/icons/twitter.png" alt="Twitter link" class="social-media__icon">
+                </a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 <script src="/js/main.js"></script>
